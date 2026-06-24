@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card-Animation Task</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #main {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+        }
+
+        nav {
+            width: 100%;
+            height: 10%;
+            background: #F7F5DC;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
+            font-weight: 900;
+        }
+
+        .card {
+            width: 150px;
+            height: 200px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <nav>
+            <p>Let's</p>
+            <p>Play</p>
+            <p>UNO</p>
+        </nav>
+
+        <div class="card"><img src="./1.png" alt=""></div>
+        <div class="card"><img src="./2.png" alt=""></div>
+        <div class="card"><img src="./3.png" alt=""></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script>
+        
+        const cards = document.querySelectorAll(".card"); //querySelectorAll selects all cards
+        // const card = document.querySelector(".card"); // but this select only one card first in a sequence
+
+        gsap.from("p", {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)",
+            delay: 1,
+            stagger: 0.1
+        })
+
+        gsap.from(cards, {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)",
+            delay: 3,
+            stagger: 0.2
+        })
+
+    </script>
+
+</body>
+
+</html>
