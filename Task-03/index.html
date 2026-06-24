@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button scale animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            background: rgb(195, 255, 105);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            background: #000;
+            color: #ffffff;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button>click</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+
+        document.querySelector("button").addEventListener("click", () => {
+            gsap.from("button", {
+                scale: 0.8,
+                ease: "ease.out",
+                duration: 0.2
+            })
+        })
+
+    </script>
+</body>
+
+</html>
