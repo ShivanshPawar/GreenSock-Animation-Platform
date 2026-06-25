@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&display=swap"
+        rel="stylesheet" />
+    <title>Hero section animation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #hero {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(195, 255, 105);
+            padding: 2rem;
+
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        p {
+            font-size: large;
+            font-weight: 500;
+
+        }
+
+        nav {
+            display: flex;
+            gap: 5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .hero-heading {
+            font-family: "Bodoni Moda", serif;
+            margin-top: 3rem;
+            text-align: center;
+            font-size: clamp(15rem, 29vw, 22rem);
+            font-weight: 500;
+            line-height: 0.85;
+            letter-spacing: -0.06em;
+        }
+
+        .image-container {
+            margin-top: 3rem;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="hero">
+        <div class="header">
+            <div>
+                <p id="para">We champion arresting work with original vision <br /> devoted to visual excellence, the
+                    production
+                    of uplifting <br> imagery and the pursuit of beauty.</p>
+            </div>
+            <nav>
+                <a href="#">PROJECTS</a>
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+                <a href="#">SHOP</a>
+            </nav>
+        </div>
+
+        <h1 class="hero-heading">RANSOM</h1>
+
+        <div class="image-container">
+            <img src="image.png" alt="">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+    <script>
+
+        const para = document.querySelectorAll("#para");
+        const nav = document.querySelectorAll("a");
+        const heading = document.querySelectorAll(".hero-heading");
+        const img = document.querySelectorAll(".image-container");
+
+        gsap.from(para, {
+            y: 25,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.out",
+            delay: 1,
+        })
+
+        gsap.from(nav, {
+            y: 25,
+            opacity: 0,
+            duration: 0.5,
+            ease: "power3.out",
+            delay: 1.3,
+            stagger: 0.1
+        })
+
+        gsap.from(heading, {
+            y: 25,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            delay: 1.5,
+        })
+
+        gsap.from(img, {
+            y: 25,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            delay: 1.7,
+        })
+
+    </script>
+
+</body>
+
+</html>
